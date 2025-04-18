@@ -1,0 +1,164 @@
+body {
+    display: flex;
+	background-color: rgb(0, 0, 0);
+	color: white;
+    height :100vh;
+    box-sizing: border-box;
+	text-align: center;
+    overflow: hidden;
+	font-size: 24px;
+    align-items: flex-end;
+    margin: 0;
+    position: relative;
+    background: url("background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    /*transition: background-color 2s ease;   背景色変更の遷移 */
+}
+
+#icons{
+    position: absolute;
+    top:0;
+    left:0;
+    margin-top: 10px;
+    margin-left:10px;
+    gap:5px;
+}
+
+#questionImg{
+    position: absolute;
+    top:0%;
+    right:20%;
+    visibility: hidden;
+}
+
+#comment{
+    background-size:contain;
+    font-size: 20px;
+    width:67%;
+    height:auto;
+    color: #FFFFFF;
+    text-align: center;
+    position: relative; /* 画像に重ねる文字を絶対位置で配置するためにrelativeにする */
+    display: inline-block; /* 画像と文字を一緒に扱うためにインラインブロックにする */
+}
+
+#conteainer{
+    display: flex;
+    height: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    width:100%;
+    gap:5%;
+    align-items: center;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-self: stretch;
+    justify-content: center;
+    gap:10%
+}
+
+button,input{
+    width:100%;
+    height: 20%;
+    border-radius: 50px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #cccccc84;
+    color:white;
+    border:0;
+}
+
+::placeholder {
+    color: #cccccc84;
+}
+
+#rangelImg{
+    position: absolute;
+    margin-left :20vw;
+    z-index: -1;
+    margin-bottom: 20vh;
+}
+
+/* 文字を重ねるスタイル */
+.comment-text {
+    position: absolute; /* 文字を絶対位置で配置 */
+    top: 50%; /* 親要素の中央に配置 */
+    left: 50%;
+    transform: translate(-50%, -50%); /* 文字の中央を親要素の中央に合わせる */
+    color: white; /* 文字色 */
+    font-size: 24px; /* 文字の大きさ */
+    font-weight: bold; /* 文字を太字にする */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影をつける */
+    width: 80%;
+}
+
+.message-text {
+    position: absolute; /* 文字を絶対位置で配置 */
+    text-align: end;
+    bottom:0; 
+    right:0;
+    margin-bottom: 7%;
+    margin-right: 10%;
+    color: white; /* 文字色 */
+    font-size: 15px; /* 文字の大きさ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影をつける */
+    opacity: 0;        /* 初期状態で透明 */
+    visibility: hidden; /* 初期状態で非表示 */
+    transition: opacity 1s ease-in-out, visibility 0s linear 1s; /* opacityを1秒かけて変更 */
+}
+/* 画像のスタイル */
+#comment img {
+    display: block; /* 画像の下に余計な隙間を防ぐため */
+    width: 100%; /* 画像を親要素の幅に合わせる */
+}
+
+.switch-container {
+    position: absolute;
+    top:1%;
+    right:1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lever {
+    width: 120px;
+    height: 40px;
+    background-color: #555;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+  
+.lever-knob {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 85px;
+    transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.off {
+    color: #f44336;
+}
+
+.on {
+    color: #4caf50;
+}

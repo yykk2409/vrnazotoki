@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>救出成功!</title>
+  <link rel="stylesheet" href="FTPpxepP/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+  <audio id="audio" src="FTPpxepP/audio.mp3" loop hidden></audio>
+</head>
+<body>
+    <div id="icons" >
+      <span class="material-symbols-outlined home" onclick="window.location.href='/';">home</span>
+    </div>
+    <img src="FTPpxepP/rangel.png" id="rangelImg" width="195"/>
+    <div class="switch-container " id="switch-container">
+      <div id="lever" class="lever" onclick="toggleSwitch()" >
+        <div class="lever-knob"></div>
+      </div>
+      <p id="status" class="on">ON</p>
+    </div>
+    <div id="conteainer">
+      
+      <div id="comment">
+        <img src="FTPpxepP/frame_rangel.png"/>
+        <div class="comment-text" id="comment-text"></div>
+        <div class="message-text" id="message-text">Enterを押して次へ</div>
+      </div>
+      <div id="buttons" hidden>
+        <button id="replay_button">もう一度視聴する↺</button>
+        <button id="next_button">次へ⇨</button>
+      </div>
+    </div>
+  <script src="FTPpxepP/script.js"></script>
+</body>
+</html>
+<style>
+  .home { 
+    cursor: pointer;
+    font-size: 3rem;
+  }
+  </style>
+

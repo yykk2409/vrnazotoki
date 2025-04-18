@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>例題</title>
+  <link rel="stylesheet" href="FcxKopx0/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+</head>
+<body> 
+    <div id="icons" >
+      <span class="material-symbols-outlined home" onclick="window.location.href='/';">home</span>
+      <span class="material-symbols-outlined print" onclick="window.open('/print/FcxKopx0');">print</span>
+    </div>
+    <img class="example" id="exampleImg" src="FcxKopx0/example.png" alt="image" width="600">
+    <div class="switch-container" id="switch-container">
+      <div id="lever" class="lever" onclick="toggleSwitch()" >
+        <div class="lever-knob"></div>
+      </div>
+      <p id="status" class="on">ON</p>
+    </div>
+    <img src="FcxKopx0/rangel.png" id="rangelImg" width="195"/>
+    <div id="conteainer">
+      
+      <div id="comment">
+        <img src="FcxKopx0/frame_rangel.png" />
+        <div class="comment-text" id="comment-text"></div>
+        <div class="message-text" id="message-text">Enterを押して次へ</div>
+      </div>
+      <div id="buttons" hidden>
+        <button id="replay_button">もう一度視聴する↺</button>
+        <input id="answer" type="text" disabled placeholder="ひらがなで解答を入力"/>
+        <button id="next_button" class="link">解答する</button>
+
+      </div>
+    </div>
+  <script src="FcxKopx0/script.js"></script>
+</body>
+</html>
+<style>
+  .home { 
+    cursor: pointer;
+    font-size: 3rem;
+  }
+  .print { 
+    cursor: pointer;
+    font-size: 3rem;
+  }
+</style>

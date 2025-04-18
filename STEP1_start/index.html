@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>体験版</title>
+  <link rel="stylesheet" href="30IbXwvH/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+</head>
+<body>
+    <div id="icons" >
+      <span class="material-symbols-outlined home" onclick="window.location.href='/';">home</span>
+    </div>
+    <img src="30IbXwvH/rangel.png" id="rangelImg" width="195"/>
+    <div class="switch-container" id="switch-container">
+      <div id="lever" class="lever" onclick="toggleSwitch()" >
+        <div class="lever-knob"></div>
+      </div>
+      <p id="status" class="on">ON</p>
+    </div>
+    <div id="conteainer">
+      
+      <div id="comment">
+        <img src="30IbXwvH/frame_rangel.png" />
+        <div class="comment-text" id="comment-text"></div>
+        <div class="message-text" id="message-text">Enterを押して次へ</div>
+      </div>
+      <div id="buttons" hidden>
+        <button id="replay_button">もう一度視聴する↺</button>
+        <button id="next_button">Aへ行く⇨</button>
+      </div>
+    </div>
+  <script src="30IbXwvH/script.js"></script>
+</body>
+</html>
+<style>
+  .home { 
+    cursor: pointer;
+    font-size: 3rem;
+  }
+  </style>
+

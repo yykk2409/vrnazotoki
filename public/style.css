@@ -1,0 +1,81 @@
+body {
+    display: flex;
+	background-color: white;
+	color: white;
+    height :100vh;
+    box-sizing: border-box;
+	text-align: center;
+	font-size: 24px;
+    align-items: flex-end;
+    margin: 0;
+    position: relative;
+}
+body {
+	background: image-set("background.jpg") no-repeat center center fixed;
+    background-size: cover;
+	text-align: center;
+}
+
+.dotgothic16-regular {
+    font-family: "DotGothic16", serif;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing:5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left:15px;
+}
+
+#div-container{
+    position:absolute;
+    display: flex;
+    flex-wrap: wrap;
+    top:0;
+    left:0;
+    width:100vw;
+    height:84vh;
+    gap:10% 6.25%;
+    box-sizing: border-box;
+    padding-left:6.25%;
+    padding-right: 6.25%;
+}
+  
+#div{
+    width: 15%;
+    height:26.7%;
+    background-color: #05aa9084;
+    display: flex;
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    border-radius: 10px;
+}
+
+#next_button{
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:11%;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 3%;
+    background-color: #05aa9084;
+    color:white;
+    border:0;
+}
+
+#reset_button{
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:11%;
+    width: 20%;
+    border-radius: 50px;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-right: 36%;
+    background-color: #05aa9084;
+    color:white;
+    border:0;
+}

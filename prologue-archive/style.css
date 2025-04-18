@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    flex-direction: column;
+	background-color: white;
+	color: white;
+	text-align: center;
+    padding-top:5%;
+	font-size: 24px;
+}
+body {
+	background-color: white;
+	text-align: center;
+}
+
+#video button{
+    width:100px;
+    height:100px;
+    border-radius: 10px;
+    font-size :20px;
+}
