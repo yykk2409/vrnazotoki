@@ -24,8 +24,27 @@ const answerList = {
 
 app.use(express.static('public'))
 
-const jsonString = fs.readFileSync('./qnum.json', 'utf8');
-const data = JSON.parse(jsonString);
+// const jsonString = fs.readFileSync('./qnum.json', 'utf8');
+// const data = JSON.parse(jsonString);
+
+const data = {
+    "R7unvOKv":"infomation",
+    "5t0HO0j5":"prologue",
+    "FcxKopx0":"example",
+    "30IbXwvH":"STEP1_start",
+    "uBMrjeP8":"STEP1_A",
+    "66eHO6JD":"STEP1_B",
+    "020Gv8gM":"STEP1_C",
+    "xLDGW6mJ":"STEP1_D",
+    "Bj7bJUOh":"STEP1_E",
+    "qLltIC6K":"STEP1_F",
+    "0PAlpjGH":"STEP1_G",
+    "DOkfC0W8":"STEP2_start",
+    "FTPpxepP":"STEP2_end",
+    "r8RSLqHD":"STEP3_1",
+    "iDClXBBl":"STEP3_2",
+    "FyrBmht2":"epilogue"
+}
 
 app.get('/:qnum', (req, res, next) => {
     const qnum = req.params.qnum;
