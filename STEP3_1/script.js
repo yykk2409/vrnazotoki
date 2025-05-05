@@ -395,3 +395,20 @@ next_button.addEventListener("click", async () =>{
 		}
 	}
 })
+
+function openConsole() {
+	const width = 600;
+	const height = 300;
+
+	// 現在の画面サイズから中央座標を計算
+	const left = (window.screen.width - width) / 2;
+	const top = (window.screen.height - height) / 2;
+
+	const features = `width=${width},height=${height},left=${left},top=${top},resizable=no`;
+
+	const win = window.open('/r8RSLqHD/console.html', 'CommandPrompt', features);
+
+	if (!win) {
+		alert("ポップアップがブロックされました。ブラウザの設定を確認してください。");
+	}
+}

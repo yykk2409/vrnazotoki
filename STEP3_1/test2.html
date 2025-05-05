@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ポップアップ起動</title>
+</head>
+<body>
+  <button onclick="openConsole()">コマンドプロンプトを開く</button>
+
+  <script>
+    function openConsole() {
+      const width = 600;
+      const height = 300;
+
+      // 現在の画面サイズから中央座標を計算
+      const left = (window.screen.width - width) / 2;
+      const top = (window.screen.height - height) / 2;
+
+      const features = `width=${width},height=${height},left=${left},top=${top},resizable=no`;
+
+      const win = window.open('console.html', 'CommandPrompt', features);
+
+      if (!win) {
+        alert("ポップアップがブロックされました。ブラウザの設定を確認してください。");
+      }
+    }
+  </script>
+</body>
+</html>

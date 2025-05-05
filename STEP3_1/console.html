@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Command Prompt</title>
+  <style>
+    * {
+      font-family:'Courier New', Courier, monospace;
+    }
+    body {
+      background-color: black;
+      color: lime;
+      padding: 20px;
+    }
+    .line {
+      display: flex;
+      align-items: center;
+    }
+    .prompt {
+      margin-right: 5px;
+    }
+    input {
+      flex: 1;
+      background: black;
+      color: lime;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+    .error {
+      color: red;
+    }
+    pre {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<pre>
+Virtual Prompt v1.0
+
+Available command: brake
+
+Usage:
+  brake floor
+  brake wall [n|e|w|s]
+
+Type your command below.
+</pre>
+<div id="output">
+  
+</div>
+
+<div class="line">
+  <span class="prompt">root@virtual-prompt~$</span>
+  <input type="text" id="commandInput" autofocus />
+</div>
+
+<script>
+  const output = document.getElementById('output');
+  const inputEl = document.getElementById('commandInput');
+
+  inputEl.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      const input = this.value.trim();
+      const parts = input.split(/\s+/);
+      
+      let result = '';
+      if (input === '') {
+        result = '';
+      } else if (parts[0] == 'clear' && parts[1] == null){
+          window.location.reload();
+      } else if (parts[0] !== 'brake') {
+        result = `<span class="error">Error: '${input}'は未知のコマンドです。</span>`;
+      } else if (parts.length === 1) {
+        result = `<span class="error">Error: 'brake' の後にfloor または wallの引数が必要です。</span>`;
+      } else if (parts[1] === 'floor') {
+        if (parts.length === 2) {
+          result = `<span class="error">Error: このコマンドは'ランゲル'によって無効にされています。</span>`
+        } else {
+          result = `<span class="error">Error: 'brake floor' に余分な引数があります。</span>`;
+        }
+      } else if (parts[1] === 'wall') {
+        if (parts.length === 2) {
+          result = `<span class="error">Error: 'brake wall' の後に方向（n, e, w, s）が必要です。</span>`;
+        } else if (parts.length === 3) {
+          const dir = parts[2].toLowerCase();
+          if (['n', 'e', 'w', 's'].includes(dir)) {
+            result = parts[2] == "w" ? "西の壁の破壊が完了しました。" : `<span class="error">Error: このコマンドは'ランゲル'によって無効にされています。</span>`;
+          } else {
+            result = `<span class="error">Error: 方向は 'n', 'e', 'w', 's' のいずれかである必要があります</span>`;
+          }
+        } else {
+          result = `<span class="error">Error: 'brake wall' に余分な引数があります。</span>`;
+        }
+      } else {
+        result = `<span class="error">Error: 引数'${parts[1]}'は無効です。 'floor' または 'wall' を指定してください</span>`;
+      }
+
+      // コマンドと出力をログとして追加
+      output.innerHTML += `<div class="line"><span class="prompt">root@virtual-prompt~$</span><span>${input}</span></div>`;
+      if (result) {
+        output.innerHTML += `<div>${result}</div>`;
+      }
+
+      this.value = '';
+      // スクロール下部に自動移動
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  });
+</script>
+
+</body>
+</html>
